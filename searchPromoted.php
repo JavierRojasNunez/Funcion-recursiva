@@ -6,10 +6,11 @@ function searchPromoted($promoted, $db,  &$total){
     $where = "WHERE promoted = '$promoted'";
     $columns = '*';
     $promoted = $db->read($table, $columns, $where);//aqui consulta del tipo SELECT {$clmns} FROM {$tbl} {$where} "
-    $number = count($promoted); 
-        if($number > 0) {        
+    
+        if(count($promoted) > 0) {   
+          $number = count($promoted);
           $total += $number;      
-             for($i = 0; $i< $number; $i++){
+             for($i = 0; $i< count($promoted); $i++){
                searchPromoted($promoted[$i]['promoted'], $db, $total);
              }
         }
