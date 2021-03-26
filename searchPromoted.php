@@ -26,7 +26,7 @@ function searchPromoted($promoted, $db,  &$total){
   $total = 0;
   $number = searchPromoted($person, $bd, $total);
 
-  if(isset($number)){
+  if(isset($number) && $number){
     echo "numero personas promovidas por $person es de: $number. ";
   }else{
     echo "numero personas promovidas por $person es de: 0. ";
